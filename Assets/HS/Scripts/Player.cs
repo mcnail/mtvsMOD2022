@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     CharacterController cc;
 
     public Animator anim;
-
+    Vector3 charFront;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        charFront = Camera.main.transform.forward;
+
+        charFront.y = 0;
+
+        charFront = charFront.normalized;
+
+        anim.transform.parent.forward = charFront;
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
