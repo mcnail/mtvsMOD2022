@@ -21,6 +21,9 @@ public class IKctrl : MonoBehaviour
         {
             anim.SetIKPositionWeight(AvatarIKGoal.RightHand, weight);
             anim.SetIKPosition(AvatarIKGoal.RightHand, controllerIk.position);
+            anim.SetIKRotationWeight(AvatarIKGoal.RightHand, weight);
+            anim.SetIKRotation(AvatarIKGoal.RightHand, controllerIk.rotation);
+            
         }
     }
         // Update is called once per frame
