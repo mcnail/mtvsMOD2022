@@ -9,6 +9,11 @@ public class IKctrl : MonoBehaviour
     public Transform controllerIk;
     [Range(0,1)]
     public float weight;
+
+    public Transform controllerHint;
+    [Range(0, 1)]
+    public float weightHint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +28,9 @@ public class IKctrl : MonoBehaviour
             anim.SetIKPosition(AvatarIKGoal.RightHand, controllerIk.position);
             anim.SetIKRotationWeight(AvatarIKGoal.RightHand, weight);
             anim.SetIKRotation(AvatarIKGoal.RightHand, controllerIk.rotation);
-            
+
+            anim.SetIKHintPositionWeight(AvatarIKHint.RightElbow, weightHint);
+            anim.SetIKHintPosition(AvatarIKHint.RightElbow, controllerHint.position);
         }
     }
         // Update is called once per frame
